@@ -6,7 +6,10 @@ function Boards(){
     return (
         <div className="boards">
             <Board></Board>
-            <Board name={"Barbie"}></Board>
+            <Board name={"Test"}></Board>
+            <Board name={"Test"}></Board>
+            <Board name={"Test"}></Board>
+            <Board name={"Test"}></Board>
         </div>
         
     )
