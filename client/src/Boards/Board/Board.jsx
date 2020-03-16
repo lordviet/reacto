@@ -3,7 +3,7 @@ import './Board.css'
 
 function Board(props) {
     return (
-        <div className="Board">
+        <div className="board">
             {props.name ? <h2>{props.name}</h2> : <h2>Create new board...</h2>}
         </div>
     )
