@@ -9,10 +9,17 @@
     -webkit-box-shadow: -2px 2px 5px 2px rgba(190, 190, 190, 1);
     -moz-box-shadow: -2px 2px 5px 2px rgba(190, 190, 190, 1);
     box-shadow: -2px 2px 5px 2px rgba(190, 190, 190, 1);
-    
     transition: all .15s ease-in-out;
 }
 
 .board:hover {
-    transform: scale(1.045);
+    transform: scale(1.05);
 }
+
+.create-board{
+    background-color: #4BBF6B;
+    color: #fff;
+}
+
+/* .create-board-active{
+} */
