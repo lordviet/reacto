@@ -1,0 +1,13 @@
+.boardName {
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+    width: 20em;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    background-color: #4BBF6B;
+    color: #fff;
+    word-wrap: break-word;
+    -webkit-box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);
+    -moz-box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);
+    box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);
+}
