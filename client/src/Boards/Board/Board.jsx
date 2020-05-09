@@ -3,7 +3,7 @@ import './Board.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import boardActions from './boardActions';
-
+import { Link } from 'react-router-dom';
 
 function Board(props) {
 
@@ -23,7 +23,7 @@ function Board(props) {
             boardActions.addBoardToStorage(boardName);
             props.updateBoards(JSON.parse(localStorage.getItem("boards")));
         }
-        else{
+        else {
             showError(true);
         }
 
@@ -31,9 +31,11 @@ function Board(props) {
 
     if (props.name) {
         return (
-            <div className="board">
-                <h2>{props.name}</h2>
-            </div>
+            <Link className="board linkBoard" to={{ pathname: `/board/${props.boardId}`}}>
+                <div>
+                    <h2>{props.name}</h2>
+                </div>
+            </Link>
         )
     }
 
