@@ -30,10 +30,11 @@ function Board(props) {
     }
 
     if (props.name) {
+        const { name, boardId } = props;
         return (
-            <Link className="board linkBoard" to={{ pathname: `/board/${props.boardId}`}}>
+            <Link className="board linkBoard" to={`/board/${boardId}`}>
                 <div>
-                    <h2>{props.name}</h2>
+                    <h2>{name}</h2>
                 </div>
             </Link>
         )
