@@ -25,7 +25,7 @@ function Board(props) {
         }
         else {
             boardName.length > 30 ?
-                showError("Name is too long!") :
+                showError('Name is too long!') :
                 showError('Oops! You forgot the name!')
         }
     }
@@ -51,7 +51,7 @@ function Board(props) {
             <p>What shall we call the board?</p>
             <input type="text" name="boardname" onChange={e => setBoardName(e.target.value)} />
             <button onClick={() => createBoard()}>CREATE</button>
-            <p className={error ? "create-board-err" : "create-board-err hidden"}>{error}</p>
+            <p className={error ? 'create-board-err' : 'create-board-err hidden'}>{error}</p>
         </div>
     }
 
