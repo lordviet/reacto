@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import './Board.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
+import './Board.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import boardActions from './boardActions';
 
 
 function Board(props) {
@@ -19,7 +20,8 @@ function Board(props) {
     function createBoard() {
         if (boardName) {
             closeBoard();
-            console.log(boardName);
+            boardActions.addBoardToStorage(boardName);
+            props.updateBoards(JSON.parse(localStorage.getItem("boards")));
         }
         else{
             showError(true);
