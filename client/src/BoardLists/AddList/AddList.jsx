@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './AddList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import boardActions from '../../Boards/Board/boardActions';
 
-function AddList() {
+function AddList(props) {
     const [active, setActive] = useState(false);
     const [listName, setListName] = useState('');
     const [error, showError] = useState('');
-
+    
     function closeList() {
         setActive(false);
         setListName('');
@@ -17,6 +18,8 @@ function AddList() {
     function createList() {
         if (listName && listName.length <= 30) {
             closeList();
+            console.log(listName);
+            boardActions.addListToBoard(listName, props.id);
             //boardActions.addBoardToStorage(boardName);
             //props.updateBoards(JSON.parse(localStorage.getItem("boards")));
         }

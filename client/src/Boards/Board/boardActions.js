@@ -3,7 +3,7 @@ module.exports = {
         let boardInfo = {
             boardName,
             id: 1 + getRandomInt(),
-            lists: [] // lists will be added here
+            lists: [] 
         }
 
         if (!localStorage.getItem('boards')) {
@@ -12,6 +12,17 @@ module.exports = {
 
         let boards = JSON.parse(localStorage.getItem('boards'));
         boards.push(boardInfo);
+        localStorage.setItem('boards', JSON.stringify(boards));
+    },
+
+    addListToBoard: (listName, boardId) => {
+        let list = {
+            listName,
+            listId: 1 + getRandomInt(),
+            tasks: []
+        }
+        let boards = JSON.parse(localStorage.getItem('boards'));
+        boards.find(b => b.id === boardId).lists.push(list);
         localStorage.setItem('boards', JSON.stringify(boards));
     }
 }
