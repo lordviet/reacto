@@ -1,0 +1,52 @@
+.add-list {
+    border: 1px solid rgb(190, 190, 190);
+    width: 10em;
+    height: auto;
+    padding: 30px 0;
+    flex-basis: 30%;
+    background-color: #0a2c74;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    -webkit-box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);
+    -moz-box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);
+    box-shadow: -1px 1px 4px 1px rgba(190, 190, 190, 1);;
+    transition: transform .15s ease-in-out;
+}
+
+.add-list:hover {
+    transform: scale(1.05);
+}
+
+.add-list-active, .add-list-active>button {
+    background-color: #0a2c74;
+    color: #fff;
+}
+
+.add-list-active{
+    cursor: default;
+    position: relative;
+    width: 250px;
+}
+
+.add-list-active>input, .add-list-active>button {
+    margin: 1em;
+    padding: 0.6em;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    outline: none;
+}
+
+.add-list-active>input{
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.add-list-active>button{
+    transition: all .2s ease-in-out;
+}
+
+.add-list-active>button:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
