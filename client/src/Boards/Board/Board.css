@@ -13,13 +13,13 @@
     transition: all .15s ease-in-out;
 }
 
+.board:hover {
+    transform: scale(1.05);
+}
+
 .linkBoard {
     text-decoration: inherit;
     color: inherit;
-}
-
-.board:hover {
-    transform: scale(1.05);
 }
 
 .create-board, .create-board-active>button {

@@ -11,7 +11,6 @@ function Board(props) {
     const [boardName, setBoardName] = useState('');
     const [error, showError] = useState('');
 
-
     function closeBoard() {
         setActive(false);
         setBoardName('');
@@ -29,7 +28,6 @@ function Board(props) {
                 showError("Name is too long!") :
                 showError('Oops! You forgot the name!')
         }
-
     }
 
     if (props.name) {
