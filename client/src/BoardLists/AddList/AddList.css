@@ -1,9 +1,9 @@
 .add-list {
     border: 1px solid rgb(190, 190, 190);
-    width: 10em;
     height: auto;
-    padding: 30px 0;
-    flex-basis: 30%;
+    margin-right: 1.5em;
+    width: 8em;
+    padding: 2em;
     background-color: #0a2c74;
     color: #fff;
     border-radius: 7px;

@@ -1,0 +1,21 @@
+.list {
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 7px;
+    margin-right: 3.5em;
+    padding: 0em 2em;
+    width: 15.5em;
+    word-wrap: break-word;
+    box-shadow: -0.5px 0.5px 3.5px 0.5px rgba(190, 190, 190, 1);
+}
+
+.list>input{
+    padding: 1em;
+    width: 16em;
+    margin: 1em auto;
+    border: 1px solid silver;
+    border-radius: 2px;
+}
+
+.list>input:focus{
+    outline-color: #4BBF6B;
+}

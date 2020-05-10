@@ -8,7 +8,7 @@ function AddList(props) {
     const [active, setActive] = useState(false);
     const [listName, setListName] = useState('');
     const [error, showError] = useState('');
-    
+
     function closeList() {
         setActive(false);
         setListName('');
@@ -18,12 +18,13 @@ function AddList(props) {
     function createList() {
         if (listName && listName.length <= 30) {
             closeList();
-            console.log(listName);
-            boardActions.addListToBoard(listName, props.id);
-            //boardActions.addBoardToStorage(boardName);
-            //props.updateBoards(JSON.parse(localStorage.getItem("boards")));
+            const boardId = props.id;
+            boardActions.addListToBoard(listName, boardId);
+            props.updateLists(JSON.parse(localStorage.getItem('boards'))
+                .filter(b => b.id === boardId)[0].lists);
         }
         else {
+            // Maybe 30 is too long for board
             listName.length > 30 ?
                 showError("Name is too long!") :
                 showError('Give me a name!')
