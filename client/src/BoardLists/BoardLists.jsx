@@ -3,6 +3,7 @@ import './BoardLists.css'
 import BoardName from './BoardName/BoardName';
 import AddList from './AddList/AddList';
 import List from './List/List';
+
 function BoardLists(props) {
     //  Make a check about cases where it doesn't exist and user inputs it manually 404
     const boardId = +props.match.params.id;

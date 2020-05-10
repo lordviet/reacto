@@ -26,7 +26,13 @@ module.exports = {
         localStorage.setItem('boards', JSON.stringify(boards));
     },
 
-    addTaskToList: (task, boardId, listName) => {
+    addTaskToList: (taskName, boardId, listName) => {
+        let task = {
+            taskName,
+            taskId: 1 + getRandomInt(),
+            active: true
+        }
+
         let boards = JSON.parse(localStorage.getItem('boards'));
         boards.find(b => b.id === boardId).lists
             .find(l => l.listName === listName).tasks.push(task);

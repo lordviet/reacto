@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './List.css';
 import boardActions from '../../services/boardActions';
 import Task from './Task/Task';
@@ -19,11 +19,6 @@ function List(props) {
         }
     }
 
-    useEffect(() => {
-        if (allTasks) allTasks.map(t =>
-            <Task name={t} key={allTasks.indexOf(t)} updateTasks={setTasks} />);
-    });
-
     return (
         <div className="list">
             <h2>
@@ -32,7 +27,7 @@ function List(props) {
             <input type="text" placeholder="Add a task" ref={refContainer}
                 onChange={e => setTaskName(e.target.value)}
                 onKeyDown={(e) => createTask(e)} />
-            {allTasks ? allTasks.map(t => <Task name={t} key={Math.floor(Math.random() * Math.floor(Number.MAX_SAFE_INTEGER))} />) : null}
+            {allTasks ? allTasks.map(t => <Task name={t.taskName} boardId={props.boardId} listName={props.name} isActive={t.active} key={t.taskId} />) : null}
         </div>
     )
 }
