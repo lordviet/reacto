@@ -43,7 +43,6 @@ function Board(props) {
 
     let board;
 
-    // TODO should be form
     if (active) {
         board = <div className="board create-board create-board-active">
             <FontAwesomeIcon className="closeIcon" icon={faTimes} onClick={() => closeBoard()} />
@@ -62,9 +61,7 @@ function Board(props) {
         </div>
     }
 
-    return (
-        board
-    )
+    return board;
 }
 
 

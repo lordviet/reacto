@@ -7,7 +7,7 @@ function Boards() {
 
     useEffect(() => {
         if (boards) boards.map(b => <Board name={b.boardName} boardId={b.id} key={b.id}/>);
-    })
+    });
 
     return (
         <div className="boards">
