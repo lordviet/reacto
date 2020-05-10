@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Boards from '../Boards/Boards';
-import BoardLists from '../BoardLists/BoardLists'
+import BoardLists from '../BoardLists/BoardLists';
+import NotFound from '../NotFound/NotFound';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Boards} />
           <Route path='/board/:id' component={BoardLists} />
+          <Route path='/*' component={NotFound}/>
         </Switch>
       </Router>
     </div>
