@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Board.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import boardActions from './boardActions';
+import boardActions from '../../services/boardActions';
 import { Link } from 'react-router-dom';
 
 function Board(props) {

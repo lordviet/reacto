@@ -18,7 +18,7 @@ function BoardLists(props) {
         <div className="boardLists">
             <BoardName name={boardName} />
             <div className="lists">
-                {allLists ? allLists.map(l => <List name={l.listName} key={l.listId} />) : null}
+                {allLists ? allLists.map(l => <List name={l.listName} boardId={boardId} key={l.listId} />) : null}
                 <AddList updateLists={setLists} id={boardId} />
             </div>
         </div>

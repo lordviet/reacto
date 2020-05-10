@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import boardActions from '../../Boards/Board/boardActions';
+import boardActions from '../../services/boardActions';
 
 function AddList(props) {
     const [active, setActive] = useState(false);
@@ -17,6 +17,8 @@ function AddList(props) {
 
     function createList() {
         if (listName && listName.length <= 30) {
+            // list should have unique name or maybe it should be searched with id
+            // if listname exists add it with name  + (number of listNames)
             closeList();
             const boardId = props.id;
             boardActions.addListToBoard(listName, boardId);

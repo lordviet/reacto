@@ -1,9 +1,9 @@
 module.exports = {
-    addBoardToStorage: boardName => {   
+    addBoardToStorage: boardName => {
         let boardInfo = {
             boardName,
             id: 1 + getRandomInt(),
-            lists: [] 
+            lists: []
         }
 
         if (!localStorage.getItem('boards')) {
@@ -24,6 +24,19 @@ module.exports = {
         let boards = JSON.parse(localStorage.getItem('boards'));
         boards.find(b => b.id === boardId).lists.push(list);
         localStorage.setItem('boards', JSON.stringify(boards));
+    },
+
+    addTaskToList: (task, boardId, listName) => {
+        let boards = JSON.parse(localStorage.getItem('boards'));
+        boards.find(b => b.id === boardId).lists
+            .find(l => l.listName === listName).tasks.push(task);
+        localStorage.setItem('boards', JSON.stringify(boards));
+    },
+
+    getListTasks: (boardId, listName) => {
+        return JSON.parse(localStorage.getItem('boards'))
+            .find(b => b.id === boardId).lists
+            .find(l => l.listName === listName).tasks;
     }
 }
 
