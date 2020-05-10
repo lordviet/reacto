@@ -17,8 +17,6 @@ function AddList(props) {
 
     function createList() {
         if (listName && listName.length <= 30) {
-            // list should have unique name or maybe it should be searched with id
-            // if listname exists add it with name  + (number of listNames)
             closeList();
             const boardId = props.id;
             boardActions.addListToBoard(listName, boardId);

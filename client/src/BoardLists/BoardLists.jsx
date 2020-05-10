@@ -14,7 +14,7 @@ function BoardLists(props) {
     useEffect(() => {
         if (allLists) allLists.map(l => <List name={l.listName} key={l.listId} />);
     });
-    
+
     return (
         <div className="boardLists">
             <BoardName name={boardName} />

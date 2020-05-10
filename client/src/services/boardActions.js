@@ -21,8 +21,16 @@ module.exports = {
             listId: 1 + getRandomInt(),
             tasks: []
         }
+
         let boards = JSON.parse(localStorage.getItem('boards'));
-        boards.find(b => b.id === boardId).lists.push(list);
+        let lists = boards.find(b => b.id === boardId).lists;
+        let existingListsLength = lists.filter(l => l.listName === listName).length;
+
+        if (existingListsLength) {
+            list.listName += ` ${existingListsLength + 1}`;
+        }
+
+        lists.push(list);
         localStorage.setItem('boards', JSON.stringify(boards));
     },
 
